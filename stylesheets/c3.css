@@ -44,7 +44,10 @@
 
 /*-- Line --*/
 .c3-line {
-  stroke-width: 1px; }
+
+  stroke-width: 1px;
+}
+
 
 /*-- Point --*/
 .c3-circle._expanded_ {
@@ -57,7 +60,7 @@
 
 /*-- Bar --*/
 .c3-bar {
-  stroke-width: 0; }
+  stroke-width:   0; }
 
 .c3-bar._expanded_ {
   fill-opacity: 0.75; }
@@ -67,6 +70,7 @@
   opacity: 1; }
 
 .c3-target.c3-focused path.c3-line, .c3-target.c3-focused path.c3-step {
+
   stroke-width: 2px; }
 
 .c3-target.c3-defocused {
@@ -161,6 +165,28 @@
 
 .c3-chart-arcs .c3-chart-arcs-gauge-min {
   fill: #777; }
+
+  .c3-xgrid-line.avgDist line {
+      stroke: red;
+  }
+  .c3-xgrid-line.avgDist text {
+      fill: black;
+  }
+
+  .c3-ygrid-line.startLine line {
+      stroke: red;
+  }
+  .c3-ygrid-line.startLine text {
+      fill: black;
+  }
+
+  .c3-ygrid-line.stopLine line {
+      stroke: red;
+  }
+  .c3-ygrid-line.stopLine text {
+      fill: black;
+  }
+
 
 .c3-chart-arc .c3-gauge-value {
   fill: #000;
