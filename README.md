@@ -3,8 +3,10 @@
 
 ### My process:
 	-Use GitHub pages to host web-application
-	-Read data from csv file and generate JSON
-	-Display graphs and describe observations on webpage
+	-Read data from csv file using PapaParse
+	-Store data in appropriate data structures
+	-Display specific charts using C3.js
+	-Describe observations on webpage
 	
 ### Graph/Chart Library
 c3.js: http://c3js.org/
@@ -13,5 +15,4 @@ c3.js: http://c3js.org/
 PapaParse: http://papaparse.com/
 
 ### Contact
-
 Send any questions/comments to stephen.palathingal@gmail.com

@@ -8,7 +8,7 @@ body, html{
   color:#666;
 }
 
-.pimg,.pimg2,.pimg3,.pimg4{
+.img,.img2,.img3,.img4{
 position: relative;
 opacity: 0.70;
 background-position: center;
@@ -18,32 +18,32 @@ background-attachment: fixed;
 }
 
 .logo{
-  background: url('../dataAndImages/BikeLogo.png') no-repeat;
-  background-color: #282e34;
+  background: url('../images/BikeShare.jpg') no-repeat;
+  background-color: #e65c00;
   min-height: 250px;
   min-width: 300;
   background-size:contain;
   background-position: center;
 }
 
-.pimg{
-  background-image:url('../dataAndImages/bikes.jpg') ;
+.img{
+  background-image:url('../images/lonebike.jpg') ;
   min-height: 200px;
 }
 
-.pimg2{
-  background-image:url('../dataAndImages/bikeLine.jpg') ;
+.img2{
+  background-image:url('../images/twobikers.jpg') ;
   min-height: 200px;
 }
 
-.pimg3{
-  background-image:url('../dataAndImages/bikeRoad.jpg') ;
+.img3{
+  background-image:url('../images/sunsetbike.jpg') ;
   min-height: 200px;
 
 }
 
-.pimg4{
-  background-image:url('../dataAndImages/bikeSunset.jpg') ;
+.img4{
+  background-image:url('../images/whitebike.jpg') ;
   min-height: 200px;
 
 }
@@ -53,7 +53,7 @@ background-attachment: fixed;
   padding:50px 80px;
 }
 
-.section-dark{
-  background-color: #282e34;
-  color:#ddd;
+.section-light{
+  background-color:#f0f0f5;
+  color:#e65c00;
 }
