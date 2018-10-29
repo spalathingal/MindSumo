@@ -3,7 +3,7 @@
 My process:
 
 ### Random biking image
-![Image of Lone Bike](https://github.com/spalathingal/MindSumo/blob/master/_images/lone%20bike.jpg)
+![Image of Lone Bike](https://images6.alphacoders.com/549/549198.jpg)
 
 ### Graph 1
 
