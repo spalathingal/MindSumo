@@ -1,8 +1,21 @@
-## Welcome to GitHub Pages
+## Capital One BikeShare Web App
 
-You can use the [editor on GitHub](https://github.com/spalathingal/MindSumo/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+My process:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Random biking image
+![Image of Lone Bike]()
+
+### Graph 1
+
+This is a blah
+
+### Graph 2
+
+This is a blah blah
+
+### Graph 3
+
+This is a blah blah blah
 
 ### Markdown
 
@@ -28,10 +41,6 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+### Contact
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/spalathingal/MindSumo/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file. Testing babbyyyy!
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Send any questions/comments to stephen.palathingal@gmail.com
