@@ -1,6 +1,4 @@
 ## Capital One BikeShare Web App
-
-### Random biking image
 ![Image of Lone Bike](https://images6.alphacoders.com/549/549198.jpg)
 
 ### My process:
