@@ -8,6 +8,7 @@ function parseData(createGraph) {
       //function calls for different graphs
       createGraph(results.data); //bar
       createPieChart(results.data); //pie
+      createDonutChart(results.data); //donut
     }
   });
 }
@@ -105,6 +106,75 @@ function createPieChart(data){
           onmouseover: function (d, i) { console.log("onmouseover", d, i); },
           onmouseout: function (d, i) { console.log("onmouseout", d, i); }
       }
+  });
+}
+
+
+function createDonutChart(data){
+  //min station = 3000, max station = 4108
+  //could make array utilizing a heap function and linear probing but unnecessary
+
+  var startStations = new Array(1109); //stores counts of stations started at
+  var endStations = new Array(1109); //stores counts of stations ended at
+
+  //startStations.push("Start");
+  //endStations.push("End");
+
+  //initialize array with blank values for exact number of stations 
+  for(var i=1; i<=1108; i++){
+    startStations[i] = 0;
+    endStations[i] = 0;
+  }
+  
+  //increment counter at indexes as u read from file
+  for(var i=1; i<data.length; i++){
+    if(data[i][4] >= 3000 && data[i][4] <= 4108){
+      if(data[i][7] >= 3000 && data[i][7] <= 4108){
+        startStations[data[i][4]-3000]++;
+        endStations[data[i][4]-3000]++;
+      }
+      //else: continues to next i
+    }
+  }
+  //three most commmon start stations
+  //first index is station #
+  //second index is count at that station
+  var sMax = [0,0];
+  var sMax2 = [0,0];
+  var sMax3 = [0,0];
+  
+  for(var i=0; i<startStations.length; i++){
+    if(startStations[i] > sMax[1]){
+      sMax[0] = i+3000;
+      sMax[1] = startStations[i];
+    }
+    if(startStations[i] > sMax2[1] && startStations[i] < sMax[1]){
+      sMax2[0] = i+3000;
+      sMax2[1] = startStations[i];
+    }
+    if(startStations[i] > sMax3[1] && startStations[i] < sMax2[1]){
+      sMax3[0] = i+3000;
+      sMax3[1] = startStations[i];
+    }
+  }
+
+  //draw scatterplot
+  var chart = c3.generate({
+    bindto: '#donutChart',
+    data: {
+        columns: [
+            [sMax[0], sMax[1]],
+            [sMax2[0], sMax2[1]],
+            [sMax3[0], sMax3[1]]
+        ],
+        type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    donut: {
+        title: "Most Common Stations"
+    }
   });
 }
 
