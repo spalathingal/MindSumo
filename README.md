@@ -1,9 +1,12 @@
 ## Capital One BikeShare Web App
 
-My process:
-
 ### Random biking image
 ![Image of Lone Bike](https://images6.alphacoders.com/549/549198.jpg)
+
+### My process:
+	-Use GitHub pages to host web-application
+	-Analyze data in csv file and generate graphs (using a language and IDE familiar to me)
+	-Display graphs and describe observations on webpage
 
 ### Graph 1
 
