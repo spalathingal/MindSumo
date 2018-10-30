@@ -117,9 +117,6 @@ function createDonutChart(data){
   var startStations = new Array(1109); //stores counts of stations started at
   var endStations = new Array(1109); //stores counts of stations ended at
 
-  //startStations.push("Start");
-  //endStations.push("End");
-
   //initialize array with blank values for exact number of stations 
   for(var i=1; i<=1108; i++){
     startStations[i] = 0;
@@ -142,6 +139,8 @@ function createDonutChart(data){
   var sMax = [0,0];
   var sMax2 = [0,0];
   var sMax3 = [0,0];
+  var sMax4 = [0,0];
+  var sMax5 = [0,0];
   
   for(var i=0; i<startStations.length; i++){
     if(startStations[i] > sMax[1]){
@@ -156,7 +155,16 @@ function createDonutChart(data){
       sMax3[0] = i+3000;
       sMax3[1] = startStations[i];
     }
+    if(startStations[i] > sMax4[1] && startStations[i] < sMax3[1]){
+      sMax4[0] = i+3000;
+      sMax4[1] = startStations[i];
+    }
+    if(startStations[i] > sMax5[1] && startStations[i] < sMax4[1]){
+      sMax5[0] = i+3000;
+      sMax5[1] = startStations[i];
+    }
   }
+  //I repeated the process for end stations, and got the same top stations
 
   //draw scatterplot
   var chart = c3.generate({
@@ -165,7 +173,9 @@ function createDonutChart(data){
         columns: [
             [sMax[0], sMax[1]],
             [sMax2[0], sMax2[1]],
-            [sMax3[0], sMax3[1]]
+            [sMax3[0], sMax3[1]],
+            [sMax4[0], sMax4[1]],
+            [sMax5[0], sMax5[1]]
         ],
         type : 'donut',
         onclick: function (d, i) { console.log("onclick", d, i); },
@@ -173,7 +183,7 @@ function createDonutChart(data){
         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
     },
     donut: {
-        title: "Most Common Start Stations"
+        title: "Most Common Stations"
     }
   });
 }
