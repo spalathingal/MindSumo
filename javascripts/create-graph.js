@@ -173,7 +173,7 @@ function createDonutChart(data){
         onmouseout: function (d, i) { console.log("onmouseout", d, i); }
     },
     donut: {
-        title: "Most Common Stations"
+        title: "Most Common Start Stations"
     }
   });
 }
