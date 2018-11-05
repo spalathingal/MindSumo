@@ -9,6 +9,7 @@ function parseData(createGraph) {
       createGraph(results.data); //bar
       createPieChart(results.data); //pie
       createDonutChart(results.data); //donut
+      //createBarChart(results.data); //was not able to finish in time
     }
   });
 }
@@ -187,5 +188,80 @@ function createDonutChart(data){
     }
   });
 }
+
+function createBarChart(data){
+var distance = 0.0; //Distance of each ride
+var average = 0.0;
+var number = 0;
+var total = 0.0;
+var count = data.length;
+var miles = ["0","0.2","0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2.0" ,"2.0+"]; // Array of different distances
+var distances = ["Number of riders",0,0,0,0,0,0,0,0,0,0,0,0];
+
+for(var i = 1; i < data.length; i++){
+   distance = haversineDistance(parseFloat(data[i][5]), parseFloat(data[i][6]), parseFloat(data[i][8]), parseFloat(data[i][9]));
+   //checking if values are valid
+   if(isNaN(distance)){
+     count --;
+     continue; // goes too next iteration
+   }
+ }
+   /*
+   total += parseFloat(distance);
+   //adds riders to array
+   if(distance <= 0)
+     distances[1] ++;
+   else if(distance <= 0.2)
+     distances[2]++;
+   else if(distance <= 0.4)
+     distances[3]++;
+   else if(distance <= 0.6)
+     distances[4]++;
+   else if(distance <= 0.8)
+     distances[5]++;
+   else if(distance <= 1.0)
+     distances[6]++;
+   else if(distance <= 1.2)
+     distances[7]++;
+   else if(distance <= 1.4)
+     distances[8]++;
+   else if(distance <= 1.6)
+     distances[9]++;
+   else if(distance <= 1.8)
+     distances[10]++;
+   else if(distance <= 2.0)
+     distances[11]++;
+   else if(distance > 2.0+)
+     distances[12]++; 
+}
+average = parseFloat(total)/count;*/
+/*
+//draw chart
+var chart = c3.generate({
+  bindto: '#barChart',
+  });*/
+}
+
+//Haversine Formula that calculates distance
+function haversineDistance(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  //cleans the data set from emptyy values or non-numbers
+  if ((isNaN(lat1)) || isNaN(lat2) || isNaN(lon1) || isNaN(lon2) || lon1 == 0 ||
+    lon2 == 0 || lat1 == 0 || lat2 == 0) {
+    return NaN;
+  }
+  var dLat = convertToRad(lat2-lat1);
+  var dLon = convertToRad(lon2-lon1);
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = parseFloat(R * c);  // Distance in km
+  var mil = parseFloat(d/1.60934);
+  return  mil;// converts to miles
+}
+
+function convertToRad(deg) {
+  return deg * (Math.PI/180);
+}
+
 
 parseData(createGraph);
